@@ -16,19 +16,36 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
 
-    - name: Generate docs
-      working-directory: .github/docs
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      working-directory: docs
+      run: |
+        pip install -r requirements.txt    
+
+    - name: Generate Documentation
       run: |
         python3 generate_language_docs.py
 
-    - name: Commit files
+    - name: Build HTML
+      working-directory: docs
       run: |
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git commit -m "Update lang docs" -a
+        make html
+        touch build/html/.nojekyll
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
+    - name: Documentation Artifacts
+      uses: actions/upload-artifact@v2
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+        name: documentation
+        path: |
+          docs/build/html/*
+
+    - name: Deploy Page
+      uses: JamesIves/github-pages-deploy-action@v4.2.2
+      if: github.ref == 'refs/heads/main'
+      with:
+        branch: gh-pages
+        folder: docs/build/html # The folder the action should deploy.
