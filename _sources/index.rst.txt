@@ -13,6 +13,8 @@ in a range of languages for fun and learning.
 Languages
 ===========
 
+View what has been implemented below
+
 .. toctree::
    :maxdepth: 1
    :glob:
