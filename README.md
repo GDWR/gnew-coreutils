@@ -15,6 +15,4 @@
 > If you want to use these tools, just use <a href="https://www.gnu.org/software/coreutils">GNU coreutils</a>
 
 
-# What's been done?
-
-Link to docs...
+# [Documentation](https://gdwr.github.io/gnew-coreutils/)
