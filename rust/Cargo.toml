@@ -1,21 +1,6 @@
 [package]
-name = "gnew"
+name = "gnew-coreutils"
 version = "0.0.1"
 edition = "2021"
 
 [dependencies]
-clap = { version = "3.2.14", features = ["derive"] }
-
-
-
-[[bin]]
-name = "false"
-path = "src/false.rs"
-
-[[bin]]
-name = "true"
-path = "src/true.rs"
-
-[[bin]]
-name = "yes"
-path = "src/yes.rs"
