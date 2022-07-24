@@ -27,6 +27,7 @@ jobs:
         pip install -r requirements.txt    
 
     - name: Generate Documentation
+      working-directory: docs
       run: |
         python3 generate_language_docs.py
 
