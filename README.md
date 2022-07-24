@@ -16,3 +16,5 @@
 
 
 # [Documentation](https://gdwr.github.io/gnew-coreutils/)
+
+# [Contributing](./CONTRIBUTING.md)
