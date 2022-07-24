@@ -9,7 +9,7 @@ assert PROJECT_ROOT.name == "gnew-coreutils", "incorrect project root"
 # value=(ext, source_path_from_langroot)
 langs = {
     "go": (".go", "cmd"),
-    "python": (".py", "gnew-coreutils"),
+    "python": (".py", "gnew_coreutils"),
     "rust": (".rs", "src"),
 }
 
