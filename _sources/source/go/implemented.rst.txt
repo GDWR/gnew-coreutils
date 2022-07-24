@@ -1,4 +1,4 @@
-Implemented: 1/102
+Implemented: 0/102
 
 .. list-table::
 
@@ -309,5 +309,5 @@ Implemented: 1/102
     - ❌
 
   * - `yes <https://man.archlinux.org/man/core/coreutils/yes.1.en>`_
-    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/go/src/yes.go>`_
+    - ❌
 
