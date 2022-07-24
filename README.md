@@ -1,6 +1,6 @@
 <div align="center">
-    <img src="docs/assets/gnew.png" alt="gnew" style="width: 200px; border-radius: 15%; margin-top: 25px">
-    <h1 style="margin-top: 0">GNEW coreutils</h1>
+    <img src="docs/assets/gnew.png" alt="gnew" style="width: 200px">
+    <h1>GNEW coreutils</h1>
 </div>
 
 <div align="center">
