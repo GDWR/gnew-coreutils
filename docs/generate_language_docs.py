@@ -10,7 +10,7 @@ assert PROJECT_ROOT.name == "gnew-coreutils", "incorrect project root"
 langs = {
     "go": (".go", "cmd"),
     "python": (".py", "gnew_coreutils"),
-    "rust": (".rs", "src"),
+    "rust": (".rs", "src/bin"),
 }
 
 utils = [
