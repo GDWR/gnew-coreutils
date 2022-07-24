@@ -2,8 +2,11 @@
 from functools import lru_cache
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).parent.parent.parent
+PROJECT_ROOT = Path(__file__).parent.parent
+assert PROJECT_ROOT.name == "gnew-coreutils", "incorrect project root"
+
 langs = ["go", "python", "rust"]
+lang_to_extension = {"go": "go", "python": "py", "rust": "rs"}
 utils = [
     "b2sum", "base32", "base64", "basename", "basenc", "cat", "chcon", "chgrp", "chmod", "chroot", "cksum", "comm", "cp", "csplit", "cut", "date", "dd",
     "df", "dir", "dircolors", "dirname", "dirname", "du", "echo", "env", "expand", "expr", "factor", "false", "fmt", "fold", "head", "hostid", "id",
@@ -19,6 +22,11 @@ def get_webpage(cmd: str) -> str:
     return f"https://man.archlinux.org/man/core/coreutils/{cmd}.1.en"
 
 
+def src_url(lang: str, cmd: str) -> str:
+    """Always links to main"""
+    return f"https://github.com/GDWR/gnew-coreutils/blob/main/{lang}/src/{cmd}.{lang_to_extension[lang]}"
+
+
 @lru_cache
 def get_status(language: str, util: str) -> bool:
     """We are assuming all the languages have been built,
@@ -29,25 +37,23 @@ def get_status(language: str, util: str) -> bool:
 def create_rst(language: str) -> None:
     """Broken into 2 tables due to size"""
 
-    with open(f"./langs/{language}.rst", "w") as f:
-
+    with open(f"./source/{language}/implemented.rst", "w") as f:
         implemented_count = sum(get_status(language, u) for u in utils)
         f.write(f"Implemented: {implemented_count}/{len(utils)}\n\n")
 
-        def _generate_table(cmds: list[str]) -> None:
-            f.write(".. list-table::\n\n")
-            f.write(f"  * - Command\n")
-            for c in cmds:
-                f.write(f"    - `{c} <{get_webpage(c)}>`_\n")
-            f.write("\n")
+        f.write(
+            ".. list-table::\n\n"
+            "  * - Command\n"
+            "    - Implemented\n\n"
+        )
 
-            f.write(f"  * - Implemented\n")
-            for c in cmds:
-                f.write(f"    - {'✅' if get_status(language, c) else '❌'}\n")
-            f.write("\n")
+        for u in utils:
+            f.write(f"  * - `{u} <{get_webpage(u)}>`_\n")
 
-        _generate_table(utils[:50])
-        _generate_table(utils[50:])
+            if get_status(language, u):
+                f.write(f"    - ✅ `src <{src_url(language, u)}>`_\n\n")
+            else:
+                f.write("    - ❌\n\n")
 
 
 if __name__ == "__main__":

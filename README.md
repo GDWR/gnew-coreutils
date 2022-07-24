@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="docs/imgs/gnew.png" alt="gnew" style="width: 200px; border-radius: 15%; margin-top: 25px">
+    <img src="docs/assets/gnew.png" alt="gnew" style="width: 200px; border-radius: 15%; margin-top: 25px">
     <h1 style="margin-top: 0">GNEW coreutils</h1>
 </div>
 
@@ -17,4 +17,4 @@
 
 # What's been done?
 
-Link to docs... 
+Link to docs...
