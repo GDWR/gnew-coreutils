@@ -90,7 +90,7 @@ Implemented: 3/102
     - ❌
 
   * - `false <https://man.archlinux.org/man/core/coreutils/false.1.en>`_
-    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/rust/src/false..rs>`_
+    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/rust/src/bin/false.rs>`_
 
   * - `fmt <https://man.archlinux.org/man/core/coreutils/fmt.1.en>`_
     - ❌
@@ -270,7 +270,7 @@ Implemented: 3/102
     - ❌
 
   * - `true <https://man.archlinux.org/man/core/coreutils/true.1.en>`_
-    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/rust/src/true..rs>`_
+    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/rust/src/bin/true.rs>`_
 
   * - `truncate <https://man.archlinux.org/man/core/coreutils/truncate.1.en>`_
     - ❌
@@ -309,5 +309,5 @@ Implemented: 3/102
     - ❌
 
   * - `yes <https://man.archlinux.org/man/core/coreutils/yes.1.en>`_
-    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/rust/src/yes..rs>`_
+    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/rust/src/bin/yes.rs>`_
 

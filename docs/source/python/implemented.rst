@@ -1,4 +1,4 @@
-Implemented: 0/102
+Implemented: 3/102
 
 .. list-table::
 
@@ -90,7 +90,7 @@ Implemented: 0/102
     - ❌
 
   * - `false <https://man.archlinux.org/man/core/coreutils/false.1.en>`_
-    - ❌
+    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/python/gnew_coreutils/false.py>`_
 
   * - `fmt <https://man.archlinux.org/man/core/coreutils/fmt.1.en>`_
     - ❌
@@ -270,7 +270,7 @@ Implemented: 0/102
     - ❌
 
   * - `true <https://man.archlinux.org/man/core/coreutils/true.1.en>`_
-    - ❌
+    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/python/gnew_coreutils/true.py>`_
 
   * - `truncate <https://man.archlinux.org/man/core/coreutils/truncate.1.en>`_
     - ❌
@@ -309,5 +309,5 @@ Implemented: 0/102
     - ❌
 
   * - `yes <https://man.archlinux.org/man/core/coreutils/yes.1.en>`_
-    - ❌
+    - ✅ `src <https://github.com/GDWR/gnew-coreutils/blob/main/python/gnew_coreutils/yes.py>`_
 

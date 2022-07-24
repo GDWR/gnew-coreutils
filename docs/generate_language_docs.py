@@ -39,8 +39,11 @@ def get_status(language: str, util: str) -> bool:
     """We are assuming all the languages have been built,
     so we can just check their `{lang}/build` has a file of that name."""
     ext, path = langs[lang]
-    return (PROJECT_ROOT / language / path / f"{util}{ext}").exists()
 
+    if language == "go":
+        return (PROJECT_ROOT / language / path / util).exists()
+    else:
+        return (PROJECT_ROOT / language / path / f"{util}{ext}").exists()
 
 def create_rst(language: str) -> None:
     with open(f"./source/{language}/implemented.rst", "w") as f:
