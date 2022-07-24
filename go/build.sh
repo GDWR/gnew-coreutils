@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-for BINARY in ./cmd/*.go; do
+mkdir build --parents
+
+for BINARY in ./src/*.go; do
   go build  -o ./build "$BINARY"
 done
