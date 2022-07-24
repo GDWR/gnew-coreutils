@@ -28,11 +28,13 @@ def get_webpage(cmd: str) -> str:
     return f"https://man.archlinux.org/man/core/coreutils/{cmd}.1.en"
 
 
-def src_url(lang: str, cmd: str) -> str:
+def src_url(language: str, cmd: str) -> str:
     """Always links to main"""
-    ext, path = langs[lang]
-    return f"https://github.com/GDWR/gnew-coreutils/blob/main/{lang}/{path}/{cmd}{ext}"
-
+    ext, path = langs[language]
+    if language == "go":
+        return f"https://github.com/GDWR/gnew-coreutils/blob/main/{language}/{path}/{cmd}/main.go"
+    else:
+        return f"https://github.com/GDWR/gnew-coreutils/blob/main/{language}/{path}/{cmd}{ext}"
 
 @lru_cache
 def get_status(language: str, util: str) -> bool:
