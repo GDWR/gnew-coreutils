@@ -31,7 +31,7 @@ def get_webpage(cmd: str) -> str:
 def src_url(lang: str, cmd: str) -> str:
     """Always links to main"""
     ext, path = langs[lang]
-    return f"https://github.com/GDWR/gnew-coreutils/blob/main/{lang}/{path}/{cmd}.{ext}"
+    return f"https://github.com/GDWR/gnew-coreutils/blob/main/{lang}/{path}/{cmd}{ext}"
 
 
 @lru_cache
