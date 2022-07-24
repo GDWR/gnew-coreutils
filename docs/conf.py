@@ -57,12 +57,6 @@ html_theme = "furo"
 # html_favicon = 'favicon.ico'
 # html_logo = "assets/gnew.png"
 html_title = "GNEW coreutils"
-html_theme_options = {
-    "source_repository": "https://github.com/gdwr/gnew/",
-    "source_branch": "main",
-    "source_directory": "docs/",
-}
-
 
 # html_theme_options = {
 #     "announcement": "<em>Important</em> announcement!",

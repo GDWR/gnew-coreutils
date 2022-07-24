@@ -5,8 +5,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 assert PROJECT_ROOT.name == "gnew-coreutils", "incorrect project root"
 
-langs = ["go", "python", "rust"]
-lang_to_extension = {"go": "go", "python": "py", "rust": "rs"}
+langs_to_exts = {"go": "go", "python": "py", "rust": "rs"}
 utils = [
     "b2sum", "base32", "base64", "basename", "basenc", "cat", "chcon", "chgrp", "chmod", "chroot", "cksum", "comm", "cp", "csplit", "cut", "date", "dd",
     "df", "dir", "dircolors", "dirname", "dirname", "du", "echo", "env", "expand", "expr", "factor", "false", "fmt", "fold", "head", "hostid", "id",
@@ -24,19 +23,17 @@ def get_webpage(cmd: str) -> str:
 
 def src_url(lang: str, cmd: str) -> str:
     """Always links to main"""
-    return f"https://github.com/GDWR/gnew-coreutils/blob/main/{lang}/src/{cmd}.{lang_to_extension[lang]}"
+    return f"https://github.com/GDWR/gnew-coreutils/blob/main/{lang}/src/{cmd}.{langs_to_exts[lang]}"
 
 
 @lru_cache
 def get_status(language: str, util: str) -> bool:
     """We are assuming all the languages have been built,
     so we can just check their `{lang}/build` has a file of that name."""
-    return (PROJECT_ROOT / language / "build" / util).exists()
+    return (PROJECT_ROOT / language / "src" / f"{util}.{langs_to_exts[lang]}").exists()
 
 
 def create_rst(language: str) -> None:
-    """Broken into 2 tables due to size"""
-
     with open(f"./source/{language}/implemented.rst", "w") as f:
         implemented_count = sum(get_status(language, u) for u in utils)
         f.write(f"Implemented: {implemented_count}/{len(utils)}\n\n")
@@ -57,5 +54,5 @@ def create_rst(language: str) -> None:
 
 
 if __name__ == "__main__":
-    for lang in langs:
+    for lang in langs_to_exts.keys():
         create_rst(lang)
