@@ -1,0 +1,4 @@
+Rust
+======
+
+.. include:: implemented.rst
